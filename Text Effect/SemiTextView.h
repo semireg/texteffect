@@ -1,5 +1,5 @@
 //
-//  SemiAppDelegate.h
+//  SemiTextView.h
 //  Text Effect
 //
 //  Created by Caylan Larson on 6/1/13.
@@ -7,12 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-@class SemiTextView;
 
-@interface SemiAppDelegate : NSObject <NSApplicationDelegate>
+@interface SemiTextView : NSView
 
-@property (assign) IBOutlet NSWindow *window;
-
+@property NSImage *imageToDraw;
 @property NSString *inputString;
 @property NSColor *textColor;
 
@@ -29,8 +27,8 @@
 @property IBOutlet SemiTextView *first;
 @property IBOutlet SemiTextView *second;
 @property IBOutlet SemiTextView *third;
-@property IBOutlet SemiTextView *final;
 
-@property IBOutlet NSTextField *inputField;
+@property IBOutlet NSColorWell *textColorWell;
+@property IBOutlet NSColorWell *textShadowColorWell;
 
 @end

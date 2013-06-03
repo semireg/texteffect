@@ -13,7 +13,22 @@
 		08208460175AC2C0001BD976 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0820845E175AC2C0001BD976 /* Credits.rtf */; };
 		08208463175AC2C0001BD976 /* SemiAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08208462175AC2C0001BD976 /* SemiAppDelegate.m */; };
 		08208466175AC2C0001BD976 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08208464175AC2C0001BD976 /* MainMenu.xib */; };
+		0820846E175ACA29001BD976 /* SemiTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0820846D175ACA29001BD976 /* SemiTextView.m */; };
+		08DD14BD175BCDB300CD61EC /* Digital-7Italic.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08DD14BC175BCD8C00CD61EC /* Digital-7Italic.ttf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		08DD14BA175BCC7100CD61EC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				08DD14BD175BCDB300CD61EC /* Digital-7Italic.ttf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0820844C175AC2BF001BD976 /* Text Effect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Text Effect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +44,9 @@
 		08208461175AC2C0001BD976 /* SemiAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemiAppDelegate.h; sourceTree = "<group>"; };
 		08208462175AC2C0001BD976 /* SemiAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemiAppDelegate.m; sourceTree = "<group>"; };
 		08208465175AC2C0001BD976 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0820846C175ACA29001BD976 /* SemiTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemiTextView.h; sourceTree = "<group>"; };
+		0820846D175ACA29001BD976 /* SemiTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemiTextView.m; sourceTree = "<group>"; };
+		08DD14BC175BCD8C00CD61EC /* Digital-7Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Digital-7Italic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +102,8 @@
 			children = (
 				08208461175AC2C0001BD976 /* SemiAppDelegate.h */,
 				08208462175AC2C0001BD976 /* SemiAppDelegate.m */,
+				0820846C175ACA29001BD976 /* SemiTextView.h */,
+				0820846D175ACA29001BD976 /* SemiTextView.m */,
 				08208464175AC2C0001BD976 /* MainMenu.xib */,
 				08208456175AC2C0001BD976 /* Supporting Files */,
 			);
@@ -93,6 +113,7 @@
 		08208456175AC2C0001BD976 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08DD14BC175BCD8C00CD61EC /* Digital-7Italic.ttf */,
 				08208457175AC2C0001BD976 /* Text Effect-Info.plist */,
 				08208458175AC2C0001BD976 /* InfoPlist.strings */,
 				0820845B175AC2C0001BD976 /* main.m */,
@@ -112,6 +133,7 @@
 				08208448175AC2BF001BD976 /* Sources */,
 				08208449175AC2BF001BD976 /* Frameworks */,
 				0820844A175AC2BF001BD976 /* Resources */,
+				08DD14BA175BCC7100CD61EC /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -169,6 +191,7 @@
 			files = (
 				0820845C175AC2C0001BD976 /* main.m in Sources */,
 				08208463175AC2C0001BD976 /* SemiAppDelegate.m in Sources */,
+				0820846E175ACA29001BD976 /* SemiTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +327,7 @@
 				0820846B175AC2C0001BD976 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
