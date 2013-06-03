@@ -82,7 +82,7 @@
     
     NSMutableParagraphStyle* textStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     [textStyle setAlignment: NSLeftTextAlignment];
-    NSFont* font = [NSFont fontWithName: @"Digital-7Italic" size:140];
+    NSFont* font = [NSFont fontWithName: @"Helvetica" size:120];
     
     NSDictionary* blackFontAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                          font, NSFontAttributeName,
