@@ -154,8 +154,8 @@
     CGImageRef innerShadowRef = CGImageCreateWithMask(negativeImageRef, shadedMask);
     CGImageRelease(shadedMask);
     
+    //DEBUG - THIRD
     NSImage *innerShadow = [[NSImage alloc] initWithCGImage:innerShadowRef size:rect.size];
-    
     self.third.imageToDraw = innerShadow;
     
     CGImageRelease(innerShadowRef);
@@ -168,6 +168,7 @@
     CGContextSetShadow([[NSGraphicsContext currentContext] graphicsPort], CGSizeZero, 0.0);
     [text_ drawAtPoint:textLocation withAttributes:stringFontAttributes];
     
+    //DEBUG - FOURTH
     [innerShadow drawAtPoint:CGPointZero fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:.8];
 }
 
