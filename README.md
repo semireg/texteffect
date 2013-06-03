@@ -1,4 +1,4 @@
-texteffect
+Text Effect
 ==========
 
-Witness the complex steps necessary to draw inner shadows on text.
+A basic app to witness the complex masking/clipping necessary to draw inner shadows on text.
