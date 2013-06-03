@@ -17,6 +17,8 @@
     self.final.second = self.second;
     self.final.third = self.third;
     
+    // Probably not the best way to do this.
+    
     // Inner
     [self addObserver:self forKeyPath:@"inputString" options:NSKeyValueObservingOptionNew context:nil];
     [self addObserver:self.final forKeyPath:@"inputString" options:NSKeyValueObservingOptionNew context:nil];

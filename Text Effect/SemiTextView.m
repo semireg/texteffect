@@ -49,10 +49,7 @@
     [newMask lockFocus];
     block();
     [newMask unlockFocus];
-    
-    // DEBUG
-    //self.first.imageToDraw = newMask;
-    
+
     struct CGImage *newMaskRef = [newMask CGImageForProposedRect:NULL context:[NSGraphicsContext currentContext] hints:nil];
     
     mask = CGImageMaskCreate(CGImageGetWidth(newMaskRef),
@@ -69,7 +66,6 @@
 {
     if(self.imageToDraw)
     {
-//        NSLog(@"Drawing Image");
         [self.imageToDraw drawAtPoint:CGPointZero fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
         return;
     }
@@ -103,7 +99,6 @@
                                         self.textColor, NSForegroundColorAttributeName,
                                         textStyle, NSParagraphStyleAttributeName, nil];
     
-    //CGSize fontSize = [text_ sizeWithAttributes:blackFontAttributes];
     
     // Create Initial Mask of White Text on Black Background
     CGImageRef mask = [self createMaskWithSize:rect.size shape:^{
@@ -127,10 +122,6 @@
     
     NSImage *cutout = [[NSImage alloc] initWithCGImage:cutoutRef size:rect.size];
     
-    //DEBUG
-    //self.second.imageToDraw = cutout;
-
-    
     CGImageRelease(cutoutRef);
     
     CGImageRef shadedMask = [self createMaskWithSize:rect.size shape:^{
@@ -141,8 +132,6 @@
                                     [self.shadowBlur floatValue],
                                     [self.shadowColor CGColor]);
         [cutout drawAtPoint:CGPointZero fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:0.9];
-        
-        //[cutout drawAtPoint:CGPointZero];
     }];
     
     //DEBUG - SECOND
@@ -153,16 +142,9 @@
     NSImage *negativeImage = [[NSImage alloc] initWithSize:rect.size];
     [negativeImage lockFocus];
     [[NSColor blackColor] setFill];
-    // custom shape goes here
     [text_ drawAtPoint:textLocation withAttributes:blackFontAttributes];
     [negativeImage unlockFocus];
     
-    // DEBUG - THIRD
-    //self.third.imageToDraw = negativeImage;
-    
-    // DEBUG
-    //[negativeImage drawAtPoint:CGPointZero fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
-    //return;
     
     struct CGImage *negativeImageRef = [negativeImage CGImageForProposedRect:NULL
                                                                      context:[NSGraphicsContext
@@ -173,19 +155,11 @@
     CGImageRelease(shadedMask);
     
     NSImage *innerShadow = [[NSImage alloc] initWithCGImage:innerShadowRef size:rect.size];
-    //NSImage *innerShadow = [UIImage imageWithCGImage:innerShadowRef scale:[[UIScreen mainScreen] scale] orientation:UIImageOrientationUp];
     
     self.third.imageToDraw = innerShadow;
     
     CGImageRelease(innerShadowRef);
     
-    // DEBUG
-    //[innerShadow drawAtPoint:CGPointZero fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
-    //return;
-    
-    // draw actual image
-    //[[NSColor colorWithCalibratedRed:0.5 green:0.5 blue:0.5 alpha:1] setFill];
-
     CGContextSetShadowWithColor([[NSGraphicsContext currentContext] graphicsPort],
                                 CGSizeMake(shadowXOuter, shadowYOuter),
                                 [self.shadowBlurOuter floatValue],
@@ -195,12 +169,6 @@
     [text_ drawAtPoint:textLocation withAttributes:stringFontAttributes];
     
     [innerShadow drawAtPoint:CGPointZero fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:.8];
-
-    //[[NSColor colorWithCalibratedWhite:0.76 alpha:1.0] setFill];
-    //[text_ drawAtPoint:CGPointMake((self.bounds.size.width/2)-(fontSize.width/2), -1) stringFontAttributes];
-    
-    // finally apply shadow
-    //[innerShadow drawAtPoint:CGPointZero];
 }
 
 @end
